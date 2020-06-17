@@ -54,4 +54,10 @@ class PhotoController extends Controller
             $tg->save();
         }
     }
+    function destroy($id){
+        PhotoDescription::where('photo_id',$id)->delete();
+        Taggable::where('photo_id',$id)->delete();
+        Photo::find($id)->delete();
+         return redirect('admin/photo');
+     }
 }

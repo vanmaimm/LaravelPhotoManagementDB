@@ -24,8 +24,9 @@ Route::get("/category/edit/{id}", "Admin\CategoryController@edit");
 Route::patch("/category/{id}","Admin\CategoryController@update");
 
 ///CRUD photo
-Route::get("/admin/photo", "Admin\PhotoController@index");
 Route::get("/photo/create", "Admin\PhotoController@create");
+Route::get("/admin/photo", "Admin\PhotoController@index");
+Route::delete("/admin/photo/{id}", "Admin\PhotoController@destroy");
 Route::post("/photo", "Admin\PhotoController@store");
 
 /// CRUD tag
