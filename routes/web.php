@@ -22,6 +22,7 @@ Route::get("/category/create", "Admin\CategoryController@create");
 Route::post("/category", "Admin\CategoryController@store");
 Route::get("/category/edit/{id}", "Admin\CategoryController@edit");
 Route::patch("/category/{id}","Admin\CategoryController@update");
+Route::delete("/category/delete/{id}", "Admin\CategoryController@destroy");
 
 ///CRUD photo
 Route::get("/photo/create", "Admin\PhotoController@create");

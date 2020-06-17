@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
+use App\Photo;
 
 class CategoryController extends Controller
 {
@@ -33,4 +34,9 @@ class CategoryController extends Controller
         $category->save();
         return redirect("/admin/category");
     }
+    function destroy($id){
+        Photo::where('category_id',$id)->delete();
+        Category::find($id)->delete();
+         return redirect('/admin/category');
+     }
 }

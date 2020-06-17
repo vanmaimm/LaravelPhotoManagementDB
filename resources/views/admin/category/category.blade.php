@@ -35,7 +35,9 @@
                     </form>
                 </td>
                 <td>
-                    <form action="/category/delete/{{$category->id}}" method="get">
+                    <form action="/category/delete/{{$category->id}}" method="post">
+                        @csrf 
+                        @method("DELETE")
                         <button><i class="fa fa-remove"></i></button>
                     </form>
                 </td>
