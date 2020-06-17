@@ -36,3 +36,4 @@ Route::get("/tag/create", "Admin\TagController@create");
 Route::post("/tag", "Admin\TagController@store");
 Route::get("/tag/edit/{id}", "Admin\TagController@edit");
 Route::patch("/tag/{id}","Admin\TagController@update");
+Route::delete("/tag/delete/{id}", "Admin\TagController@destroy");

@@ -12,7 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
     table.table {
-        width: 200px;
+        width: 500px;
     }
     </style>
 </head>
@@ -35,7 +35,9 @@
                     </form>
                 </td>
                 <td>
-                    <form action="/tag/delete/{{$tag->id}}" method="get">
+                    <form action="/tag/delete/{{$tag->id}}" method="POST">
+                    @csrf 
+                    @method("DELETE")
                         <button><i class="fa fa-remove"></i></button>
                     </form>
                 </td>
@@ -44,6 +46,7 @@
         </tbody>
     </table>
     <a href="/tag/create"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+    
 
 
     <!-- Optional JavaScript -->

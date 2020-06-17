@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Tag;
+use App\Taggable;
 
 class TagController extends Controller
 {
@@ -33,4 +34,9 @@ class TagController extends Controller
         $tag->save();
         return redirect("/admin/tag");
     }
+    function destroy($id){
+        Taggable::where('tag_id',$id)->delete();
+        Tag::find($id)->delete();
+         return redirect('admin/tag');
+     }
 }
