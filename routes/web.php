@@ -27,3 +27,10 @@ Route::patch("/category/{id}","Admin\CategoryController@update");
 Route::get("/admin/photo", "Admin\PhotoController@index");
 Route::get("/photo/create", "Admin\PhotoController@create");
 Route::post("/photo", "Admin\PhotoController@store");
+
+/// CRUD tag
+Route::get("/admin/tag", "Admin\TagController@index");
+Route::get("/tag/create", "Admin\TagController@create");
+Route::post("/tag", "Admin\TagController@store");
+Route::get("/tag/edit/{id}", "Admin\TagController@edit");
+Route::patch("/tag/{id}","Admin\TagController@update");

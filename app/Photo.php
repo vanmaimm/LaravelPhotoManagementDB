@@ -13,7 +13,7 @@ class Photo extends Model
        return $this->belongsTo("App\Category","category_id", "id" );
    }
    public function Tagmm(){
-       return $this->belongsToMany("App\Tag","taggable","tag_id", "photo_id" );
+       return $this->belongsToMany("App\Tag","taggables","tag_id", "photo_id" );
    }
    
 }

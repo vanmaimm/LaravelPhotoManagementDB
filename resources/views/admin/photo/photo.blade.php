@@ -18,7 +18,6 @@
                   <th>Category</th>
                   <th>Image</th>
                   <th>Tag</th>
-                  <th>Description</th>
               </tr>
           </thead>
           <tbody>
@@ -32,7 +31,6 @@
                             {{$tag->name}}
                         @endforeach
                   </td>
-                  <td>{{$photo->description->content}}</td>
               </tr>
             @endforeach
           </tbody>
