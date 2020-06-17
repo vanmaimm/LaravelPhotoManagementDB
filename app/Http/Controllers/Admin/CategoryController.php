@@ -10,10 +10,6 @@ class CategoryController extends Controller
 {
     function index(){
         $categories=Category::all();
-        // foreach ($categories as $category){
-        //     $category->photos;
-        // }
-        //echo "<pre>".json_encode($categories,JSON_PRETTY_PRINT)."</pre>";
         return view("admin.category.category", ["categories"=>$categories]);
     }
     function create(){
