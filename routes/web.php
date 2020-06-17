@@ -29,6 +29,8 @@ Route::get("/photo/create", "Admin\PhotoController@create");
 Route::get("/admin/photo", "Admin\PhotoController@index");
 Route::delete("/admin/photo/{id}", "Admin\PhotoController@destroy");
 Route::post("/photo", "Admin\PhotoController@store");
+Route::get("/photo/edit/{id}", "Admin\PhotoController@edit");
+Route::patch("/photo/{id}","Admin\PhotoController@update");
 
 /// CRUD tag
 Route::get("/admin/tag", "Admin\TagController@index");

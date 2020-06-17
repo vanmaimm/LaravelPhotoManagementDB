@@ -27,8 +27,8 @@
             @foreach ($photos as $photo)
             <tr>
                 <td>{{$photo->title}}</td>
-                <td>{{$photo->category->name}}</td>
-                <td>{{$photo->image}}</td>
+                <td> {{$photo->category->name}}</td>
+                <td><img src="/storage/{{$photo->image}}" alt="" style="width:100px;height:100px"></td>
                 <td>
                     @foreach ($photo->tagmm as $tag)
                     {{$tag->name}}
@@ -36,7 +36,7 @@
                 </td>
                 <td>
                     <form action="/photo/edit/{{$photo->id}}" method="get">
-                        <i class="fa fa-edit" aria-hidden="true"></i>
+                        <button><i class="fa fa-edit" aria-hidden="true"></i></button>
                     </form>
                 </td>
                 <td>

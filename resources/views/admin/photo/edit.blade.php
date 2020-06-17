@@ -12,8 +12,9 @@
 </head>
 
 <body>
-    <form action="/photo" method="post" enctype="multipart/form-data">
+    <form action="/photo/{{$photo->id}}" method="post" enctype="multipart/form-data">
         @csrf
+        @method("PATCH")
         <div class="form-group">
             <legend>Form title</legend>
         </div>
@@ -21,7 +22,7 @@
         <div class="form-group">
             <div class="col-sm-10 col-sm-offset-2">
                 <label for="name">Photo name</label></label>
-                <input type="text" name="name" id="">
+                <input type="text" name="name" id="" value="{{$photo->title}}">
             </div>
         </div>
         <div class="form-group">
@@ -30,7 +31,12 @@
                 <select class="control" name="category">
                     <option value="">Category</option>
                     @foreach ($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    <option @if($category->id==$photo->category_id)
+                        selected
+                        @endif
+                        value="{{$category->id}}">
+                        {{$category->name}}
+                    </option>
                     @endforeach
                 </select>
             </div>
@@ -48,15 +54,21 @@
                 <select class="control" name="tags[]" id='tags' multiple>
                     <option value="">Tag</option>
                     @foreach ($tags as $tag)
-                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                    <option
+                        @foreach ($photo->tagmm as $tag1)
+                        @if ($tag1->id==$tag->id)
+                        selected
+                        @endif
+                        @endforeach
+                     value="{{$tag->id}}">{{$tag->name}}</option>
                     @endforeach
                 </select>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-10 col-sm-offset-2">
-                <label for="tag">Tag</label></label>
-                <input type="text" name="description" id="">
+                <label for="tag">Description</label>
+                <input type="text" name="description" id="" value="{{$photo->description->content}}">
             </div>
         </div>
 
